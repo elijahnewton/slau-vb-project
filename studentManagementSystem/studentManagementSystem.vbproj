@@ -1,0 +1,83 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <StartupObject>Sub Main</StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <MyType>WindowsForms</MyType>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Application.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="LoginForm.Designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="SignupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SignupForm.Designer.vb">
+      <DependentUpon>SignupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="HrDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="HrDashboardForm.Designer.vb">
+      <DependentUpon>HrDashboardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="EmployeeDashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EmployeeDashboardForm.Designer.vb">
+      <DependentUpon>EmployeeDashboardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Update="EmployeeEditForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EmployeeEditForm.Designer.vb">
+      <DependentUpon>EmployeeEditForm.vb</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\*.png">
+      <LogicalName>Icons.%(Filename)%(Extension)</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
